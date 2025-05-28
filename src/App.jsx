@@ -8,6 +8,7 @@ function App() {
     image: "",
     gender: "",
   });
+  const [ searchChar, setSeachChar ] = useState("");
   const [allCharacters, setAllCharacters] = useState([]);
   useEffect(() => {
     const getCharacters = async () => {
@@ -45,6 +46,8 @@ function App() {
           <div className="flex gap-4 items-center">
             <form className="bg-gray-100 p-2 gap-2 flex ">
               <input
+              value={searchChar}
+              onChange={(e) => setSeachChar(e.target.value)}
                 type="text"
                 placeholder="Search for a character"
                 className="bg-white p-1"
